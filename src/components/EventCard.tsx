@@ -1,5 +1,7 @@
-import {  Card, CardBody, CardHeader, CardText }  from 'reactstrap';
+import {  Card, CardBody, CardHeader, CardText, Row, Col }  from 'reactstrap';
 import { DataStore } from "../context/interfaces";
+import format from 'date-fns/format'
+
 
 
 function EventCard(packagedData: { globalItem: [], localItem: [], decoded: DataStore.SportsEvent }  ) {
@@ -7,9 +9,8 @@ function EventCard(packagedData: { globalItem: [], localItem: [], decoded: DataS
   const eventData = packagedData.decoded
   const the_date = Number(eventData.start_time )
   var temp_start = new Date(the_date * 1000)
-  var the_start = temp_start.toUTCString()
-  var local_date = temp_start.toDateString()
-  var local_time = temp_start.toTimeString()
+  const formattedDate = format(temp_start,'MMMM dd yyyy - hh:mm a')
+
 
   var away_spread =  Number(eventData.away_spread) / 10 - 100
   var home_spread = Number(eventData.home_spread) /10 - 100
@@ -21,25 +22,24 @@ function EventCard(packagedData: { globalItem: [], localItem: [], decoded: DataS
       <Card key={eventData.id} >
           <CardHeader>
             {eventData.away_team} vs {eventData.home_team}
+            <br />{ formattedDate }
           </CardHeader>
           <CardBody>
           <CardText> 
-                  { local_date }<br />
-                  { local_time }<br />
-                  <br />
-                  Spread:<br />
-                  {eventData.away_team}: {away_spread}<br />
-                  {eventData.home_team}: {home_spread}<br />
-                  <br />
-                  Money Lines:<br />
-                  {eventData.away_team}: {away_money_line}<br />
-                  {eventData.home_team}: {home_money_line}<br />
-                  <br />
-                  Over / Under:<br />
-                  {over_under} <br />  
-                  details...<br />                  
+                  
+                  <Row><Col className="text-start">Spread:</Col><Col></Col></Row>                  
+                  <Row><Col  className="text-end">{eventData.away_team}:</Col><Col className="text-start"> {away_spread}<br /></Col></Row>
+                  <Row><Col className="text-end">{eventData.home_team}:</Col><Col className="text-start"> {home_spread}<br /></Col></Row>
+                  <Row><Col><br /></Col></Row>
+                  <Row><Col className="text-start">Money Lines:</Col><Col></Col></Row> 
+                  <Row><Col className="text-end">{eventData.away_team}:</Col><Col className="text-start"> {away_money_line}<br /></Col></Row>
+                  <Row><Col className="text-end">{eventData.home_team}:</Col><Col className="text-start"> {home_money_line}<br /></Col></Row>
+                  <Row><Col><br /></Col></Row>
+                  <Row><Col className="text-end">Over / Under:</Col><Col className="text-start">{over_under}  </Col></Row>
+                  
+                  {/* details...<br />                  
                   GameID: {eventData.id}<br />
-                  EventStatus: {eventData.event_status}<br />   
+                  EventStatus: {eventData.event_status}<br />    */}
               </CardText>
           </CardBody>             
       </Card>
