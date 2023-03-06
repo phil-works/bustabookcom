@@ -8,13 +8,13 @@ function ContractDetails(props) {
         return (
             <>
             <ButtonGroup>
-                <Button size="lg" outline color="secondary">
+                <Button size="sm" outline color="secondary">
                     Contract ID: {props["app_id"]}
                 </Button>
-                <Button size="lg" outline disabled color="secondary">
+                {/* <Button size="sm" outline disabled color="secondary">
                     Github Link
-                </Button>
-                <Button size="lg" outline color="secondary" href={algo_link}>
+                </Button> */}
+                <Button size="sm" outline color="secondary" href={algo_link}>
                     View on AlgoExplorer
                 </Button>
             </ButtonGroup>

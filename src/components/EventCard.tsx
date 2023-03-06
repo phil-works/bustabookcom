@@ -25,8 +25,7 @@ function EventCard(packagedData: { globalItem: [], localItem: [], decoded: DataS
             <br />{ formattedDate }
           </CardHeader>
           <CardBody>
-          <CardText> 
-                  
+          <CardText>                   
                   <Row><Col className="text-start">Spread:</Col><Col></Col></Row>                  
                   <Row><Col  className="text-end">{eventData.away_team}:</Col><Col className="text-start"> {away_spread}<br /></Col></Row>
                   <Row><Col className="text-end">{eventData.home_team}:</Col><Col className="text-start"> {home_spread}<br /></Col></Row>

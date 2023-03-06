@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Nav, NavItem, NavLink, Row, Col, Container, TabContent, TabPane } from 'reactstrap';
+import { Nav, NavItem, NavLink, Container, TabContent, TabPane } from 'reactstrap';
 import  CardBox  from './CardBox'
 
  function Rack(){
@@ -42,8 +42,8 @@ import  CardBox  from './CardBox'
           </NavLink>
         </NavItem>
     </Nav>
-    <TabContent activeTab={activeTab}>
-        
+    <hr />
+    <TabContent activeTab={activeTab}>        
         <TabPane tabId="1">
         <br /><br />
             <CardBox app_id='1049622668' />
@@ -58,7 +58,7 @@ import  CardBox  from './CardBox'
         </TabPane>
         <TabPane tabId="4">
         <br /><br />
-            <h2>NCAA Men's Basketball is coming... maybe next year.</h2>
+            <h2>NCAA Men's Basketball is coming... maybe next year.</h2><br /><br /><br /><br />
         </TabPane>
     </TabContent>
     </Container>
