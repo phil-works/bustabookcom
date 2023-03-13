@@ -89,7 +89,7 @@ function CardBox(props) {
           <Container className="text-center">
           <ContractDetails app_id={props["app_id"]}/>
             <br /><br />              
-              <Row sm="3">
+              <Row sm="1" xs="1" md="3" lg="3" xl="3">
                   {  localDataList.map((listedEvent) => (  <Col key={listedEvent.decoded.id}>{EventCard(listedEvent)}<br /></Col> )) }
               </Row>
           </Container>        

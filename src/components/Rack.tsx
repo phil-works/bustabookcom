@@ -55,6 +55,7 @@ import  CardBox  from './CardBox'
         <TabPane tabId="3">
         <br /><br />            
             <CardBox app_id='1022971265' />
+            <h2>See you next year.</h2><br /><br /><br /><br />
         </TabPane>
         <TabPane tabId="4">
         <br /><br />
